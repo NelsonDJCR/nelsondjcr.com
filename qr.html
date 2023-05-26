@@ -8,7 +8,7 @@
 
 <body>
     <h1>Lector de QR Siuuu - camera</h1>
-    
+
 
 
     <!-- Contenedor para el video y el lienzo -->
@@ -73,13 +73,10 @@
             img.onload = function () {
                 var qrCode = new QRCode();
                 qrCode.callback = function (result) {
-                    // Redireccionar a la página obtenida del código QR
-                    window.location.href = result;
+                    // Mostrar el contenido del código QR en la consola
+                    alert(result);
                 };
-                qrCode.decode(img.src, function () {
-                    // Captura exitosa del código QR, redireccionar a una página alternativa si no se encontró ningún código QR
-                    window.location.href = 'https://example.com/pagina-alternativa';
-                });
+                qrCode.decode(img.src);
             };
         });
     </script>
