@@ -1,0 +1,90 @@
+
+<div class="menu__mobile">
+    <ul>
+        <li>
+            <div>
+                <img src="svg/home.svg" alt="icon">
+            </div>
+        </li>
+        <li class="shop-btn">
+            <div>
+                <img src="svg/contact.svg" alt="icon">
+            </div>
+        </li>
+        <li class="icon__cart">
+            <div>
+                <img src="svg/cart.svg" alt="icon">
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="svg/shop.svg" alt="icon">
+            </div>
+        </li>
+        <li>
+            <div>
+                <img src="svg/info.svg" alt="icon">
+            </div>
+        </li>
+    </ul>
+</div>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    .menu__mobile {
+        position: fixed;
+        bottom: -1;
+        width: 100%;
+    }
+    .menu__mobile ul {
+        box-shadow: 5px -3px 32px 1px rgba(195, 2, 63, 0.473);
+        background: #C3023E;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        list-style: none;
+    }
+
+    .menu__mobile ul li div img {
+        width: 40px;
+        padding: 10px;
+    }
+    .menu__mobile ul li {
+        margin: 15px 15px;
+        margin-left: -15px;
+    }
+    .icon__cart div img {
+        background: #fafafa !important;
+        border-radius: 50%;
+        margin-top: -30px;
+        position: absolute;
+        margin-left: -11px;
+        padding: 20px !important;
+        border: 6px solid #C3023E;
+    }
+    .icon__cart div {
+        background: #C3023E !important;
+        padding: 20px 20px;
+        width: 68px;
+        justify-content: center;
+        margin-top: -41px !important;
+        position: relative;
+        border-radius: 74%;
+        height: 51px;
+    }
+    @media only screen and (max-width: 600px) {
+        .menu__mobile ul li div img {
+            width: 25px;
+        }
+        .icon__cart div {
+            width: 56px;
+        }
+        .menu__mobile ul li {
+            margin: 15px 15px;
+            margin-left: 15px;
+        }
+    }
+</style>
