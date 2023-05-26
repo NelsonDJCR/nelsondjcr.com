@@ -7,7 +7,8 @@
 </head>
 
 <body>
-    <h1>Lector de QR Siuuu</h1>
+    <h1>Lector de QR Siuuu - camera</h1>
+    
 
     <!-- Contenedor para el video y el lienzo -->
     <div id="contenedor">
@@ -26,13 +27,34 @@
         captureButton.innerText = 'Capturar';
         document.body.appendChild(captureButton);
 
-        // Obtener acceso a la cámara del dispositivo
-        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-            navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
-                video.srcObject = stream;
-                video.play();
+        navigator.mediaDevices.enumerateDevices()
+            .then(function (devices) {
+                var videoDevices = devices.filter(function (device) {
+                    return device.kind === 'videoinput';
+                });
+
+                if (videoDevices.length > 0) {
+                    var constraints = {
+                        video: {
+                            deviceId: { exact: videoDevices[videoDevices.length - 1].deviceId }
+                        }
+                    };
+
+                    navigator.mediaDevices.getUserMedia(constraints)
+                        .then(function (stream) {
+                            video.srcObject = stream;
+                            video.play();
+                        })
+                        .catch(function (error) {
+                            console.error('Error al acceder a la cámara:', error);
+                        });
+                } else {
+                    console.error('No se encontraron cámaras disponibles.');
+                }
+            })
+            .catch(function (error) {
+                console.error('Error al enumerar los dispositivos:', error);
             });
-        }
 
         // Agregar un evento click al botón de captura
         captureButton.addEventListener('click', function () {
