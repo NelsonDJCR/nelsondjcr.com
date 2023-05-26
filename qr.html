@@ -1,59 +1,65 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Lector de QR</title>
-  <script src="https://rawgit.com/LazarSoft/jsqrcode/master/src/qr_packed.js"></script>
+    <title>Lector de QR</title>
+    <script src="https://rawgit.com/LazarSoft/jsqrcode/master/src/qr_packed.js"></script>
 </head>
+
 <body>
-  <h1>Lector de QR</h1>
-  
-  <!-- Contenedor para el video y el lienzo -->
-  <div id="contenedor">
-    <video id="video" width="640" height="480" autoplay></video>
-    <canvas id="canvas" width="640" height="480"></canvas>
-  </div>
-  
-  <script>
-    // Acceder al video y al lienzo
-    var video = document.getElementById('video');
-    var canvas = document.getElementById('canvas');
-    var context = canvas.getContext('2d');
+    <h1>Lector de QR</h1>
 
-    // Acceder al botón de captura
-    var captureButton = document.createElement('button');
-    captureButton.innerText = 'Capturar';
-    document.body.appendChild(captureButton);
+    <!-- Contenedor para el video y el lienzo -->
+    <div id="contenedor">
+        <video id="video" width="640" height="480" autoplay></video>
+        <canvas id="canvas" width="640" height="480"></canvas>
+    </div>
 
-    // Obtener acceso a la cámara del dispositivo
-    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-        video.srcObject = stream;
-        video.play();
-      });
-    }
+    <script>
+        // Acceder al video y al lienzo
+        var video = document.getElementById('video');
+        var canvas = document.getElementById('canvas');
+        var context = canvas.getContext('2d');
 
-    // Agregar un evento click al botón de captura
-    captureButton.addEventListener('click', function() {
-      // Dibujar la imagen del video en el lienzo
-      context.drawImage(video, 0, 0, canvas.width, canvas.height);
+        // Acceder al botón de captura
+        var captureButton = document.createElement('button');
+        captureButton.innerText = 'Capturar';
+        document.body.appendChild(captureButton);
 
-      // Obtener la imagen como una cadena base64
-      var imageData = canvas.toDataURL('image/png');
+        // Obtener acceso a la cámara del dispositivo
+        if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true }).then(function (stream) {
+                video.srcObject = stream;
+                video.play();
+            });
+        }
 
-      // Crear un objeto de imagen para leer el código QR
-      var img = new Image();
-      img.src = imageData;
+        // Agregar un evento click al botón de captura
+        captureButton.addEventListener('click', function () {
+            // Dibujar la imagen del video en el lienzo
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-      // Una vez que la imagen se haya cargado, leer el código QR
-      img.onload = function() {
-        var qrCode = new QRCode();
-        qrCode.callback = function(result) {
-          // Redireccionar a la página obtenida del código QR
-          window.location.href = result;
-        };
-        qrCode.decode(img.src);
-      };
-    });
-  </script>
+            // Obtener la imagen como una cadena base64
+            var imageData = canvas.toDataURL('image/png');
+
+            // Crear un objeto de imagen para leer el código QR
+            var img = new Image();
+            img.src = imageData;
+
+            // Una vez que la imagen se haya cargado, leer el código QR
+            img.onload = function () {
+                var qrCode = new QRCode();
+                qrCode.callback = function (result) {
+                    // Redireccionar a la página obtenida del código QR
+                    window.location.href = result;
+                };
+                qrCode.decode(img.src, function () {
+                    // Captura exitosa del código QR, redireccionar a una página alternativa si no se encontró ningún código QR
+                    window.location.href = 'https://example.com/pagina-alternativa';
+                });
+            };
+        });
+    </script>
 </body>
+
 </html>
