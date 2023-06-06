@@ -306,56 +306,49 @@
                             <div class="space-border"></div>
                         </div>
                     </div>
-                    <div id="gallery" class="row sequence">
-                        <!-- <div class="col-md-4 item wow">
-                            <div class="de_modal" data-url="single-project.html">
-                                <div class="card-image-1 mod-c" data-tilt>
-                                    <div class="d-text">
-                                        <h3>Ehimy Lozano</h3>
-                                        <h5 class="d-tag">Portfolio</h5>
-                                    </div>
-                                    <img src="images/gallery/1.jpg" class="img-fluid" alt="">
-                                </div>
-                            </div>
-                        </div> -->
-                        <div class="col-md-4 item wow">
-                            <div class="de_modal" data-url="single-project.html">
-                                <div class="card-image-1 mod-c" data-tilt>
-                                    <div class="d-text">
-                                        <h3>Fundación Huellas de Bienestar</h3>
-                                        <h5 class="d-tag">Portfolio</h5>
-                                    </div>
-                                    <img src="images/services/fhb.png" class="img-fluid" alt="">
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="col-md-4 item wow">
-                            <div class="de_modal" data-url="single-project.html">
-                                <div class="card-image-1 mod-c" data-tilt>
-                                    <div class="d-text">
-                                        <h3>Kreepj</h3>
-                                        <h5 class="d-tag">website - Music (soon)</h5>
-                                    </div>
-                                    <img src="images/gallery/3.jpg" class="img-fluid" alt="">
-                                </div>
-                            </div>
-                        </div> -->
-                        <div class="col-md-4 item wow">
-                            <div class="de_modal" data-url="single-project.html">
-                                <div class="card-image-1 mod-c" data-tilt>
-                                    <div class="d-text">
-                                        <h3>Hard Store</h3>
-                                        <h5 class="d-tag">eCommerce</h5>
-                                    </div>
-                                    <img src="https://cdn.pixabay.com/photo/2018/05/18/15/30/web-design-3411373__340.jpg"
-                                        class="img-fluid" alt="">
-                                </div>
-                            </div>
-                        </div>
+                    <div class="row sequence">
+
+                        <div id="gallery" ></div>
+
+
 
                     </div>
                 </div>
             </section>
+
+            <script>
+
+
+                const getProjects = async () => {
+
+                    const result = await fetch('https://nelsondjcr.github.io/api.nelsondjcr.com/nelsondjcr/projects.nelsondjcr.json')
+                    const projects = await result.json()
+
+                    const container__projects = document.getElementById('gallery')
+
+                    projects.forEach(project => {
+                        container__projects.insertAdjacentHTML('beforebegin', `
+                        <div class="col-md-4 item wow" ${project.state ? 'onclick="redirect(\''+project.url+'\')"':"" }>
+                            <div class="de_modal" data-url="single-project.html">
+                                <div class="card-image-1 mod-c" data-tilt>
+                                    <div class="d-text">
+                                        <h3 class="text__project">${project.name}</h3>
+                                        <h5  class="d-tag text__project">${project.description}</h5>
+                                    </div>
+                                    <img src="${project.img}" class="img-fluid img__projects" alt="">
+                                </div>
+                            </div>
+                            ${!project.state ? '<div class="in__progress">in progress</div>':"" }
+                            
+                        </div>`)
+                    })
+                }
+                function redirect(url){
+                    window.open(url, '_blank');
+                }
+                getProjects()
+
+            </script>
             <section id="section-resume">
                 <div class="container relative">
                     <div class="row">
@@ -432,13 +425,14 @@
                                             <span class="d_company">Udemy</span>
                                             I have done several courses in this application to improve and learn
                                         </p>
-                                        
+
                                     </li>
                                     <li class="d_timeline-item">
                                         <h3 class="d_timeline-title">2020 - 2022</h3>
                                         <p class="d_timeline-text"><span class="d_title">Artist of College</span>
                                             <span class="d_company">Platzi</span>
-                                            Taking courses together with the Platzi community have developed my main personal projects
+                                            Taking courses together with the Platzi community have developed my main
+                                            personal projects
                                         </p>
                                     </li>
                                 </ul>
@@ -682,19 +676,19 @@
 
 
         <!-- Chat  -->
-       <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6435ae134247f20fefeb111d/1gtoqvv1m';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+// var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+// (function(){
+// var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+// s1.async=true;
+// s1.src='https://embed.tawk.to/6435ae134247f20fefeb111d/1gtoqvv1m';
+// s1.charset='UTF-8';
+// s1.setAttribute('crossorigin','*');
+// s0.parentNode.insertBefore(s1,s0);
+// })();
+        </script>
+        <!--End of Tawk.to Script-->
 
 
         <!-- Chat  -->
@@ -716,9 +710,12 @@ s0.parentNode.insertBefore(s1,s0);
                     </div>
                     <div class="col-md-6">
                         <div class="social-icons">
-                            <a target="_blank" href="https://www.linkedin.com/in/nelsondjcr/"><i class="fa fa-linkedin fa-lg"></i></a>
-                            <a target="_blank" href="https://www.instagram.com/nelsondjcr/"><i class="fa fa-instagram fa-lg"></i></a>
-                            <a target="_blank" href="https://github.com/NelsonDJCR"><i class="fa fa-github fa-lg"></i></a>
+                            <a target="_blank" href="https://www.linkedin.com/in/nelsondjcr/"><i
+                                    class="fa fa-linkedin fa-lg"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/nelsondjcr/"><i
+                                    class="fa fa-instagram fa-lg"></i></a>
+                            <a target="_blank" href="https://github.com/NelsonDJCR"><i
+                                    class="fa fa-github fa-lg"></i></a>
                         </div>
                     </div>
                 </div>
@@ -730,13 +727,8 @@ s0.parentNode.insertBefore(s1,s0);
     ================================================== -->
     <script src="js/plugins.js"></script>
     <script src="js/designesia.js"></script>
-    <script src='js/api.js' async defer></script>
     <script src="form.js"></script>
-    <script>
-        jQuery(function ($) {
-            $('.g-recaptcha').attr('data-theme', 'dark');
-        });
-    </script>
+
     <script>
         jQuery(document).ready(function () {
 
