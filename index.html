@@ -308,7 +308,7 @@
                     </div>
                     <div class="row sequence">
 
-                        <div id="gallery" ></div>
+                        <div id="gallery"></div>
 
 
 
@@ -328,7 +328,7 @@
 
                     projects.forEach(project => {
                         container__projects.insertAdjacentHTML('beforebegin', `
-                        <div class="col-md-4 item wow" ${project.state ? 'onclick="redirect(\''+project.url+'\')"':"" }>
+                        <div class="col-md-4 item wow" ${project.state ? 'onclick="redirect(\'' + project.url + '\')"' : ""}>
                             <div class="de_modal" data-url="single-project.html">
                                 <div class="card-image-1 mod-c" data-tilt>
                                     <div class="d-text">
@@ -338,12 +338,12 @@
                                     <img src="${project.img}" class="img-fluid img__projects" alt="">
                                 </div>
                             </div>
-                            ${!project.state ? '<div class="in__progress">in progress</div>':"" }
+                            ${!project.state ? '<div class="in__progress">in progress</div>' : ""}
                             
                         </div>`)
                     })
                 }
-                function redirect(url){
+                function redirect(url) {
                     window.open(url, '_blank');
                 }
                 getProjects()
@@ -678,15 +678,15 @@
         <!-- Chat  -->
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
-// var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-// (function(){
-// var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-// s1.async=true;
-// s1.src='https://embed.tawk.to/6435ae134247f20fefeb111d/1gtoqvv1m';
-// s1.charset='UTF-8';
-// s1.setAttribute('crossorigin','*');
-// s0.parentNode.insertBefore(s1,s0);
-// })();
+            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src = 'https://embed.tawk.to/6435ae134247f20fefeb111d/1gtoqvv1m';
+                s1.charset = 'UTF-8';
+                s1.setAttribute('crossorigin', '*');
+                s0.parentNode.insertBefore(s1, s0);
+            })();
         </script>
         <!--End of Tawk.to Script-->
 
