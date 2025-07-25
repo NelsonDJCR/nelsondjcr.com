@@ -29,6 +29,7 @@ import go from '../app/assets/svg/skills/go.svg';
 import graphql from '../app/assets/svg/skills/graphql.svg';
 import haxe from '../app/assets/svg/skills/haxe.svg';
 import html from '../app/assets/svg/skills/html.svg';
+import ubuntu from '../app/assets/svg/skills/ubuntu.svg';
 import illustrator from '../app/assets/svg/skills/illustrator.svg';
 import ionic from '../app/assets/svg/skills/ionic.svg';
 import java from '../app/assets/svg/skills/java.svg';
@@ -68,6 +69,8 @@ import tensorflow from '../app/assets/svg/skills/tensorflow.svg';
 import typescript from '../app/assets/svg/skills/typescript.svg';
 import unity from '../app/assets/svg/skills/unity.svg';
 import vitejs from '../app/assets/svg/skills/vitejs.svg';
+import laravel from '../app/assets/svg/skills/laravel.svg';
+import digitalocean from '../app/assets/svg/skills/digitalocean.svg';
 import vue from '../app/assets/svg/skills/vue.svg';
 import vuetifyjs from '../app/assets/svg/skills/vuetifyjs.svg';
 import webix from '../app/assets/svg/skills/webix.svg';
@@ -92,6 +95,10 @@ export const skillsImage = (skill) => {
       return gcp;
     case 'html':
       return html;
+    case 'ubuntu':
+      return ubuntu;
+    case 'laravel':
+      return laravel;
     case 'photoshop':
       return photoshop;
     case 'docker':
@@ -106,6 +113,8 @@ export const skillsImage = (skill) => {
       return css;
     case 'angular':
       return angular;
+    case 'digitalocean':
+      return digitalocean;
     case 'javascript':
       return javascript;
     case 'next js':
