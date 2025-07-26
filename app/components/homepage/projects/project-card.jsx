@@ -33,17 +33,23 @@ function ProjectCard({ experience }) {
                     </div>
                     <div>
                         <span className="ml-4 lg:ml-8 mr-2 text-white">myRole:</span>
+                        <span className="text-gray-400">{` '`}</span>
                         <span className="text-orange-400">{experience.role}</span>
+                        <span className="text-gray-400">{`'`}</span>
                         <span className="text-gray-400">,</span>
                     </div>
                     <div>
                         <span className="ml-4 lg:ml-8 mr-2 text-white">duration:</span>
+                        <span className="text-gray-400">{` '`}</span>
                         <span className="text-orange-400">{experience.duration}</span>
+                        <span className="text-gray-400">{`'`}</span>
                         <span className="text-gray-400">,</span>
                     </div>
                     <div className="ml-4 lg:ml-8 mr-2">
                         <span className="text-white">description:</span>
-                        <span className="text-cyan-400">{" " + experience.description}</span>
+                        <span className="text-gray-400">{` '`}</span>
+                        <span className="text-cyan-400">{"" + experience.description}</span>
+                        <span className="text-gray-400">{`'`}</span>
                         <span className="text-gray-400">,</span>
                     </div>
                     <div className="ml-4 lg:ml-8 mr-2">
@@ -55,7 +61,7 @@ function ProjectCard({ experience }) {
                                 {experience.tools?.length - 1 !== i && <span className="text-gray-400">{`', '`}</span>}
                             </React.Fragment>
                         ))}
-                        <span className="text-gray-400">{"],"}</span>
+                        <span className="text-gray-400">{"']"}</span>
                     </div>
                     <div>
                         <span className="text-gray-400">{`};`}</span>
