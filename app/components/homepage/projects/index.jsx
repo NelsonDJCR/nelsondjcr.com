@@ -17,7 +17,7 @@ const Projects = () => {
                 <div className="flex flex-col gap-6">
                     <div className="flex col-span-2 justify-center items-start">
                         <div className="w-[30%] h-[30%]">
-                            <AnimationLottie animationPath={experience} />
+                            {/* <AnimationLottie animationPath={experience} /> */}
                         </div>
                     </div>
                     {projectsData.slice(0, 5).map((project, index) => (
