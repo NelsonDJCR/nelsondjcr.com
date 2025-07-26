@@ -36,7 +36,7 @@ export const projectsData = [
         role: "FullStack Developer",
         company: "NyG Soft",
         description: "At NyG Soft, I supported and improved internal apps, built new modules, and developed custom solutions using PHP, Laravel, Vue.js, MySQL, and Bootstrap. I handled versioning with Git and delivered features with strong focus on performance and maintainability.",
-        duration: "(Feb 2021 - Present)",
+        duration: "(Feb 2021 - Jul 2021)",
         tools: ['PHP', 'Laravel', 'Jquery', 'Vue', 'CodeIgniter', 'JavaScript', 'Bootstrap', 'CSS', 'MySQL', 'Git'],
     },
 ];
