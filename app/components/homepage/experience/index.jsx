@@ -24,7 +24,7 @@ function Experience() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
                     <div className="flex col-span-2 justify-center items-start">
                         <div className="w-2/5 h-2/5">
-                            <AnimationLottie animationPath={experience} />
+                            {/* <AnimationLottie animationPath={experience} /> */}
                         </div>
                     </div>
                     <div>
