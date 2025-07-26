@@ -7,11 +7,10 @@ export const personalData = {
   phone: '+573112534282',
   address: 'Madrid, Spain',
   github: 'https://github.com/nelsondjcr',
-  // facebook: 'https://www.facebook.com/abusaid.riyaz/',
   linkedIn: 'https://www.linkedin.com/in/nelsondjcr/',
-  // twitter: 'https://twitter.com/said7388',
-  // stackOverflow: 'https://stackoverflow.com/users/16840768/abu-said',
-  // leetcode: "https://leetcode.com/said3812/",
+  facebook: 'https://www.facebook.com/nelsondjcr/',
+  instagram: 'https://www.instagram.com/nelsondjcr/',
+  twitter: 'https://twitter.com/nelsondjcr',
+  resume: "https://drive.google.com/file/d/1lCnbLsy7uLQ6-6SPdimb_8DGw1XxjUs6/view?usp=sharing",
   devUsername: "nelsondjcr",
-  resume: "https://drive.google.com/file/d/1lCnbLsy7uLQ6-6SPdimb_8DGw1XxjUs6/view?usp=sharing"
 }
