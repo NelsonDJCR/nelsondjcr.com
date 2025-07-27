@@ -12,5 +12,6 @@ export const personalData = {
   instagram: 'https://www.instagram.com/nelsondjcr/',
   twitter: 'https://twitter.com/nelsondjcr',
   resume: "https://drive.google.com/file/d/1lCnbLsy7uLQ6-6SPdimb_8DGw1XxjUs6/view?usp=sharing",
+  resume_latex: "https://drive.google.com/file/d/1HCJ3tmtbEW0sEGEVTgK_l7bQMLsQou4L/view?usp=sharing",
   devUsername: "nelsondjcr",
 }
