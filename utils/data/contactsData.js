@@ -1,7 +1,7 @@
 export const contactsData = {
     email: "dev@nelsondjcr.com",
-    phone: "+573112534282",
-    address: "Middle Badda, Dhaka, Bangladesh - 1212 ",
+    phone: "+573229053451",
+    address: "Bogota, Colombia",
     github: "https://github.com/said7388",
     facebook: "https://www.facebook.com/nelsondjcr/",
     linkedIn: "https://www.linkedin.com/in/nelsondjcr/",
