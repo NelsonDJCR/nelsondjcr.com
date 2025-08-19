@@ -4,7 +4,7 @@ export const personalData = {
   designation: "Software Developer",
   description: "My name is Nelson Jimenez. Full-stack developer with 5+ years of experience building scalable, high performance web applications. Specialized in Python, PHP, Laravel, JavaScript, and cloud platforms like AWS. Proven track record delivering both freelance and corporate solutions, thriving in fast paced, dynamic environments where continuous learning and innovation are key",
   email: 'contact@nelsondjcr.com',
-  phone: '+573229053451',
+  phone: '+57 322 905 3451',
   address: 'Bogotá, Colombia',
   github: 'https://github.com/nelsondjcr',
   linkedIn: 'https://www.linkedin.com/in/nelsondjcr/',
