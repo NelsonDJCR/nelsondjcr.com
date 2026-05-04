@@ -1,6 +1,6 @@
 export const contactsData = {
     email: "dev@nelsondjcr.com",
-    phone: "+573229053451",
+    phone: "+57 310 8817543",
     address: "Bogota, Colombia",
     github: "https://github.com/said7388",
     facebook: "https://www.facebook.com/nelsondjcr/",
