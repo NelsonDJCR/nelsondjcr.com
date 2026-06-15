@@ -1,9 +1,14 @@
 // @flow strict
 
-import Image from "next/image";
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 
 function DonatePage() {
+    const [amount, setAmount] = useState("");
+
+    const quickAmounts = [2, 5, 10];
+
     return (
         <div id="donate" className="my-12 lg:my-16 relative">
             <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8">
@@ -13,6 +18,7 @@ function DonatePage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                 {/* Left side - Message */}
                 <div className="order-2 lg:order-1">
+                    <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">About NelsonDJCR</p>
                     <p className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">Support My Work</p>
                     <p className="text-gray-200 text-sm lg:text-lg mb-6 leading-relaxed">
                         Hey! I'm Nelson, a Colombian full-stack dev on a big journey, in code, in life, and on the road.
@@ -21,7 +27,6 @@ function DonatePage() {
                     <p className="text-gray-200 text-sm lg:text-lg mb-6 leading-relaxed">
                         If you believe in small steps making big things, you're already part of my journey.
                     </p>
-                    
                 </div>
 
                 {/* Right side - Form */}
@@ -39,41 +44,55 @@ function DonatePage() {
                         <form className="space-y-5 mt-4">
                             <div>
                                 <label htmlFor="amount" className="block text-sm font-medium text-gray-200 mb-2">
-                                    Cantidad
+                                    Amount
                                 </label>
-                                <div className="relative">
+                                <div className="relative flex items-center">
                                     <span className="absolute left-4 top-1/2 -translate-y-1/2 text-pink-500">$</span>
                                     <input
-                                        type="number"
+                                        type="text"
                                         id="amount"
                                         name="amount"
                                         min="1"
+                                        value={amount}
+                                        onChange={(e) => setAmount(e.target.value)}
                                         placeholder="5"
-                                        className="w-full bg-[#0a0d37] border border-[#1b2c68a0] rounded-lg py-3 pl-8 pr-4 text-white placeholder-gray-500 focus:outline-none focus:border-pink-500 transition-colors"
+                                        className="w-full bg-[#0a0d37] border border-[#1b2c68a0] rounded-lg py-3 pl-8 pr-[140px] text-white placeholder-gray-500 focus:outline-none focus:border-pink-500 transition-colors"
                                     />
+                                    <div className="absolute right-2 flex gap-2">
+                                        {quickAmounts.map((val) => (
+                                            <button
+                                                key={val}
+                                                type="button"
+                                                onClick={() => setAmount(val.toString())}
+                                                className="bg-[#1b2c68a0] hover:bg-pink-500 rounded-md py-1 px-2 text-white text-sm transition-colors"
+                                            >
+                                                ${val}
+                                            </button>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                             <div>
                                 <label htmlFor="name" className="block text-sm font-medium text-gray-200 mb-2">
-                                    Nombre o Tag
+                                    Name or Tag
                                 </label>
                                 <input
                                     type="text"
                                     id="name"
                                     name="name"
-                                    placeholder="@tu_usuario"
+                                    placeholder="@your_username"
                                     className="w-full bg-[#0a0d37] border border-[#1b2c68a0] rounded-lg py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:border-pink-500 transition-colors"
                                 />
                             </div>
                             <div>
                                 <label htmlFor="message" className="block text-sm font-medium text-gray-200 mb-2">
-                                    Mensaje
+                                    Message
                                 </label>
                                 <textarea
                                     id="message"
                                     name="message"
                                     rows="3"
-                                    placeholder="Escribe un mensaje de apoyo..."
+                                    placeholder="Write a support message..."
                                     className="w-full bg-[#0a0d37] border border-[#1b2c68a0] rounded-lg py-3 px-4 text-white placeholder-gray-500 focus:outline-none focus:border-pink-500 transition-colors resize-none"
                                 />
                             </div>
@@ -81,7 +100,7 @@ function DonatePage() {
                                 type="submit"
                                 className="w-full bg-gradient-to-r from-pink-500 to-violet-600 rounded-lg py-3 px-4 text-white font-medium uppercase tracking-wider transition-all duration-300 hover:from-pink-500 hover:to-violet-600 hover:scale-105"
                             >
-                                Soporte
+                                Support
                             </button>
                         </form>
                     </div>
